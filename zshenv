@@ -71,8 +71,8 @@ elif uname | grep Linux >> /dev/null; then
     export XDG_CONFIG_HOME="$HOME/.config"
 fi
 
-export GOPATH=$HOME/src/golib:$HOME/src/go:$HOME/wip/go
-path=( $path ~/.local/bin ~/bin $HOME/src/go/bin $HOME/wip/go/bin $HOME/src/golib/bin . )
+export GOPATH=$HOME/go
+path=( $path ~/.local/bin ~/bin  $HOME/go/bin . )
 
 typeset -U path
 
