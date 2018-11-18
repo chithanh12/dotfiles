@@ -132,10 +132,10 @@ read -n 1 c; echo ''; if [[ $c == 'Y' ]] || [[ $c == 'y' ]]; then
     elif uname -a | grep -iq darwin > /dev/null; then
         if [ -f /usr/local/bin/brew ]; then
             brew install python curl wget python3 tmux zsh git reattach-to-user-namespace highlight tree
-            pip3 install git+git://github.com/powerline/powerline
-            pip3 install psutil
-            pip install neovim
-            pip3 install neovim
+            sudo pip3 install git+git://github.com/powerline/powerline
+            sudo pip3 install psutil
+            pip install --user neovim
+            pip3 install --user neovim
             if grep -iq '/usr/local/bin/zsh' /etc/shells; then
                 printf "    \033[1;34;49m /usr/local/bin/zsh is already in /etc/shells\033[0m\n"
             else

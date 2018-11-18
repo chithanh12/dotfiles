@@ -1,6 +1,6 @@
 [user]
-	name = thanh
-    email = thanh.x.ph@gmail.com
+	name = nguyenthanh
+    email = chithanh12@gmail.com
 [core]
 	excludesfile = ~/.gitignore
 [difftool "sourcetree"]
