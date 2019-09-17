@@ -84,6 +84,11 @@ elif uname | grep Linux >> /dev/null; then
     export XDG_CONFIG_HOME="$HOME/.config"
 fi
 
+if uname | grep Linux >> /dev/null; then
+    alias pbcopy='xclip -selection clipboard'
+    alias pbpaste='xclip -selection clipboard -o'
+fi
+
 export GOPATH=$HOME/go
 path=( $path ~/.local/bin ~/bin  $HOME/go/bin . )
 
