@@ -1,5 +1,10 @@
 #!/usr/bin/env zsh
 
+if [[ -d $HOME/.pyenv/bin ]]; then
+    export PYENV_ROOT=$HOME/.pyenv
+    path=( $PYENV_ROOT/bin $path )
+fi
+
 if [[ -d /usr/local/go/bin ]]; then
     path=( /usr/local/go/bin $path )
 fi
@@ -38,8 +43,16 @@ if [ -s "$NVM_DIR/nvm.sh" ]; then
         NVM_AUTO_LOAD_VERSION=$(nvm_resolve_local_alias default)
         echo "$NVM_AUTO_LOAD_VERSION" > "$NVM_DIR/_default_version"
     fi
-    nvm use --silent "$NVM_AUTO_LOAD_VERSION"
+
+    nvm use --silent default
 fi
+
+
+# config pyenv init
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
 
 typeset -U manpath
 manpath=( $manpath )
@@ -75,4 +88,5 @@ export GOPATH=$HOME/go
 path=( $path ~/.local/bin ~/bin  $HOME/go/bin . )
 
 typeset -U path
+
 
